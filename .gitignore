@@ -44,3 +44,15 @@ swig/.deps/
 swig/Makefile
 test/.deps/
 test/Makefile
+hidparser/.libs/
+hidparser/hidparser.lo
+hidparser/hidparser.o
+hidparser/libhidparser.la
+src/.libs/
+src/hid_initialisation.lo
+src/hid_initialisation.o
+src/hid_preparation.lo
+src/hid_preparation.o
+src/libhid-detach-device.o
+src/linux.lo
+src/linux.o
