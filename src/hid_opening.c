@@ -124,7 +124,7 @@ static hid_return hid_find_usb_device(HIDInterface* const hidif,
     TRACE("enumerating USB devices on bus %s...", usbbus->dirname);
     for (usbdev = usbbus->devices; usbdev; usbdev=usbdev->next) {
 
-      snprintf(hidif->id, sizeof(hidif->id), "%s/%s[%d]",
+      snprintf(hidif->id, sizeof(hidif->id), "%-.18s/%-.8s[%d]",
           usbbus->dirname, usbdev->filename, hidif->interface);
 
       TRACE("inspecting USB device %s...", hidif->id);

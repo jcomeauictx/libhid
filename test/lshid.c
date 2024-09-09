@@ -42,7 +42,7 @@ bool device_iterator (struct usb_dev_handle const* usbdev, void* custom, unsigne
  
   /* Obtain the device's full path */
   //sprintf(current_dev_path, "%s/%s", usbdev->bus->dirname, usbdev->device->filename);
-  sprintf(current_dev_path, "%s/%s", device->bus->dirname, device->filename);
+  sprintf(current_dev_path, "%-.4s/%-.4s", device->bus->dirname, device->filename);
 
   /* Check if we already saw this dev */
   for ( i = 0 ; ( hid_id[i] != NULL ) ; i++ )
@@ -55,7 +55,7 @@ bool device_iterator (struct usb_dev_handle const* usbdev, void* custom, unsigne
   if (hid_id[i] == NULL)
 	{
 	  hid_id[i] = (char *) malloc (strlen(device->filename) + strlen(device->bus->dirname) );
-	  sprintf(hid_id[i], "%s/%s", device->bus->dirname, device->filename);
+	  sprintf(hid_id[i], "%-.4s/%.4s", device->bus->dirname, device->filename);
 	}
   else /* device already seen */
 	{
